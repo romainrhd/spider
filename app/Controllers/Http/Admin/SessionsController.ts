@@ -12,6 +12,7 @@ export default class SessionsController {
   }
 
   public async store({ request, response }: HttpContextContract) {
+    // TODO need id of user logged 
     const payload = await request.validate(StoreValidator)
     await Session.create(payload)
     return response.redirect().toRoute('admin.sessions.index')

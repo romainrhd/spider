@@ -21,6 +21,10 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.group(() => {
+  Route.group(() => {
+    Route.get('login', 'Admin/Auth/LoginController.showLogin').as('showLogin')
+    Route.post('login', 'Admin/Auth/LoginController.actionLogin').as('actionLogin')
+  }).as('auth')
   Route.get('/', 'Admin/DashboardController.index').as('dashboard')
   Route.resource('sessions', 'Admin/SessionsController').except(['show'])
 }).prefix('admin').as('admin')
