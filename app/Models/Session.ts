@@ -16,6 +16,9 @@ export default class Session extends BaseModel {
   @column.dateTime()
   public endingAt: DateTime
 
+  @column()
+  public maxRangeValue: number
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 
