@@ -1,0 +1,46 @@
+@layout('admin/layouts/main')
+@set('title', 'Sessions')
+
+@section('body')  
+  @!component('components/titlePage', {
+    text: 'Créer une session'
+  })
+
+  <form action="{{ route('admin.sessions.store') }}" method="POST">
+    <div class="flex space-x-2">
+      <div class="w-1/2">
+        @!component('components/form/input', {
+          label: 'Date de début',
+          name: 'startingAt',
+          type: 'date'
+        })
+      </div>
+      <div class="w-1/2">
+        @!component('components/form/input', {
+          label: 'Date de fin',
+          name: 'endingAt',
+          type: 'date'
+        })
+      </div>
+    </div>
+    <div class="flex mt-2">
+      <div class="w-full">
+        @!component('components/form/input', {
+          label: 'Valeur max des sujets',
+          name: 'maxRangeValue',
+          type: 'range',
+          min: 0,
+          max: 10
+        })
+      </div>
+    </div>
+    <div class="flex mt-2">
+      @!component('components/button/btn', {
+        bgColor: 'blue',
+        textColor: 'white',
+        text: 'Créer la session',
+        type: 'submit'
+      })
+    </div>
+  </form>
+@end

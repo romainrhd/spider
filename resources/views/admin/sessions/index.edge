@@ -1,0 +1,51 @@
+@layout('admin/layouts/main')
+@set('title', 'Sessions')
+
+@section('body')  
+  @component('components/titlePage', {
+    text: 'Listes de mes sessions'
+  })
+    @!component('components/button/btn-link', {
+      text: 'Créer une session',
+      bgColor: 'green',
+      textColor: 'white'
+    })
+  @end
+
+  <div class="bg-white border rounded">
+    <table class="table-auto w-full">
+      <thead>
+        <tr class="bg-gray-200 text-gray-600">
+          <th class="py-3 px-6 text-center">#</th>
+          <th class="py-3 px-6 text-center">Début de la session</th>
+          <th class="py-3 px-6 text-center">Fin de la session</th>
+          <th class="py-3 px-6 text-center">Nombre de participation</th>
+          <th class="py-3 px-6 text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-600 text-sm font-light">
+        <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
+          <td class="py-3 px-6 text-center">1</td>
+          <td class="py-3 px-6 text-center">19/02/2023</td>
+          <td class="py-3 px-6 text-center">19/03/2023</td>
+          <td class="py-3 px-6 text-center">5</td>
+          <td></td>
+        </tr>
+        <tr class="border-b border-gray-200 hover:bg-gray-100">
+          <td class="py-3 px-6 text-center">2</td>
+          <td class="py-3 px-6 text-center">21/02/2023</td>
+          <td class="py-3 px-6 text-center">28/02/2023</td>
+          <td class="py-3 px-6 text-center">0</td>
+          <td></td>
+        </tr>
+        <tr class="bg-gray-50 hover:bg-gray-100">
+          <td class="py-3 px-6 text-center">2</td>
+          <td class="py-3 px-6 text-center">21/02/2023</td>
+          <td class="py-3 px-6 text-center">28/02/2023</td>
+          <td class="py-3 px-6 text-center">0</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+@end
